@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>id = {{ $taskshow->id }} のメッセージ詳細ページ</h1>
+    <h1>id = {{ $taskshow->id }} の詳細ページ</h1>
 
     <table class="table table-bordered">
         <tr>
@@ -15,6 +15,8 @@
             <td>{{ $taskshow->content }}</td>
         </tr>
     </table>
-    {!! link_to_route('tasks.edit', 'このメッセージを編集', ['id' => $taskshow->id], ['class' => 'btn btn-light']) !!}
-
+    {!! link_to_route('tasks.edit', '編集', ['id' => $taskshow->id], ['class' => 'btn btn-light']) !!}
+    {!! Form::model($taskshow,["route"=>["tasks.destroy",$taskshow->id],"method"=>"delete"]) !!}
+    {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+     {!! Form::close() !!}
 @endsection
