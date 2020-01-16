@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+ @if (count($errors) > 0)
+        <ul class="alert alert-danger" role="alert">
+            @foreach ($errors->all() as $error)
+                <li class="ml-4">{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
     <h1>id: {{ $taskedit->id }} の編集ページ</h1>
 
     <div class="row">
@@ -9,7 +15,7 @@
             {!! Form::model($taskedit, ['route' => ['tasks.update', $taskedit->id], 'method' => 'put']) !!}
         
                 <div class="form-group">
-                    {!! Form::label('status', '内容:') !!}
+                    {!! Form::label('status', 'ステータス:') !!}
                     {!! Form::text('status', null, ['class' => 'form-control']) !!}
                     {!! Form::label('content', '内容:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
