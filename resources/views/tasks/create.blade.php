@@ -10,6 +10,9 @@
         
                 <div class="form-group">
                      
+                     {!! Form::label('status', 'ステータス:') !!}
+                    
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
                     {!! Form::label('content', '内容:') !!}
                     
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}

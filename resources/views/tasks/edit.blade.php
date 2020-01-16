@@ -9,6 +9,8 @@
             {!! Form::model($taskedit, ['route' => ['tasks.update', $taskedit->id], 'method' => 'put']) !!}
         
                 <div class="form-group">
+                    {!! Form::label('status', '内容:') !!}
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
                     {!! Form::label('content', '内容:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>

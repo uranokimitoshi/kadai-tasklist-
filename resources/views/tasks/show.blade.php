@@ -9,7 +9,10 @@
             <th>id</th>
             <td>{{ $taskshow->id }}</td>
         </tr>
-        
+        <tr>
+            <th>ステータス</th>
+            <td>{{ $taskshow->status }}</td>
+        </tr>
         <tr>
             <th>内容</th>
             <td>{{ $taskshow->content }}</td>
